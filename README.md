@@ -28,7 +28,7 @@ classDiagram
     class Card {
         -String number
         -String name
-        -String plan
+        -Plan plan
         -String coverage
         -LocalDate validity
         -String serviceNetwork
