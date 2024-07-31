@@ -26,8 +26,11 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<News> news;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL)
     private Plan plan;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Card card;
 
     public Long getId() {
         return id;
@@ -67,6 +70,14 @@ public class User {
 
     public void setPlan(Plan plan) {
         this.plan = plan;
+    }
+
+    public Card getCard() {
+        return card;
+    }
+
+    public void setCard(Card card) {
+        this.card = card;
     }
 
 }

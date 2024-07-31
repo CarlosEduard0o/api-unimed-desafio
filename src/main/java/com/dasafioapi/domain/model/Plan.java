@@ -36,9 +36,6 @@ public class Plan {
 
     private String regulation;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Card card;
-
     public Long getId() {
         return id;
     }
@@ -117,13 +114,5 @@ public class Plan {
 
     public void setRegulation(String regulation) {
         this.regulation = regulation;
-    }
-
-    public Card getCard() {
-        return card;
-    }
-
-    public void setCard(Card card) {
-        this.card = card;
     }
 }

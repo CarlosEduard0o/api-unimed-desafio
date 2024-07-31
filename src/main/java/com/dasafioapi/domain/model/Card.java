@@ -2,13 +2,11 @@ package com.dasafioapi.domain.model;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 
 @Entity(name = "tb_card")
 public class Card {
@@ -19,12 +17,7 @@ public class Card {
     @Column(unique = true)
     private String number;
 
-    private String name;
-    
-    @OneToOne(cascade = CascadeType.ALL)
-    private Plan plan;
-
-    private String coverage;
+    private String clientFullName;
 
     private LocalDate validity;
 
@@ -48,28 +41,12 @@ public class Card {
         this.number = number;
     }
 
-    public String getName() {
-        return name;
+    public String getClientFullName() {
+        return clientFullName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Plan getPlan() {
-        return plan;
-    }
-
-    public void setPlan(Plan plan) {
-        this.plan = plan;
-    }
-
-    public String getCoverage() {
-        return coverage;
-    }
-
-    public void setCoverage(String coverage) {
-        this.coverage = coverage;
+    public void setClientFullName(String clientFullName) {
+        this.clientFullName = clientFullName;
     }
 
     public LocalDate getValidity() {
